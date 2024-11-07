@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE instance-profile
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/product-profile.dtd">
+
+<instance-profile id="h"
+                 name="Wiki"
+                 start-page="starter-topic.md">
+
+    <toc-element topic="Linux.md">
+        <toc-element topic="Daemon.md"/>
+        <toc-element topic="Servidores.md">
+            <toc-element topic="NAS.md"/>
+            <toc-element topic="GOvernor.md"/>
+            <toc-element topic="Nodo.md"/>
+            <toc-element topic="Redundancia-de-Hardware.md"/>
+        </toc-element>
+    </toc-element>
+    <toc-element topic="starter-topic.md"/>
+</instance-profile>

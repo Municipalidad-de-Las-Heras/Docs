@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE instance-profile
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/product-profile.dtd">
+
+<instance-profile id="t"
+                 name="Tutoriales"
+                 start-page="tutoriales.md">
+
+    <toc-element topic="Tomcat.md">
+        <toc-element topic="Instalar-Tomcat.md"/>
+    </toc-element>
+    <toc-element topic="tutoriales.md"/>
+</instance-profile>
