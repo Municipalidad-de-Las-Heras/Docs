@@ -6,8 +6,14 @@
                  name="Tutoriales"
                  start-page="tutoriales.md">
 
+    <toc-element topic="NGINX.md">
+        <toc-element topic="Install-NGINX.md"/>
+    </toc-element>
     <toc-element topic="Tomcat.md">
         <toc-element topic="Instalar-Tomcat.md"/>
     </toc-element>
     <toc-element topic="tutoriales.md"/>
+    <toc-element topic="Apache.md">
+        <toc-element topic="Install-Apache-Server.md"/>
+    </toc-element>
 </instance-profile>
