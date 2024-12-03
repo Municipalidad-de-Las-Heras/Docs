@@ -1,8 +1,8 @@
-# Instalar Tomcat
+# Install Tomcat
 
 ## Quick Overview of Tomcat
 
-Tomcat is a Java application server designed to deploy [Java Servlets](https://www.digitalocean.com/community/tutorials/servlet-tutorial-java) and [JSPs](https://www.digitalocean.com/community/tutorials/servlet-jsp-tutorial) on your system. Developed by the Apache Software Foundation, it is one of the most widely used Java applications and web servers.
+Tomcat is a Java application server designed to deploy [Java Servlets](https://www.digitalocean.com/community/tutorials/servlet-tutorial-java) and [JSPs](https://www.digitalocean.com/community/tutorials/servlet-jsp-tutorial) on your system. Developed by the Apache Software Foundation, it is one of the most widely used Java applications and web servers.
 
 Tomcat was created in an effort towards making an HTTP server which was purely built on Java and allowed Java code operations.
 
@@ -25,7 +25,7 @@ Apt Update Tomcat
 ```
 
 This command updates the Ubuntu repositories to the latest available repositories. Now, this ensures that we will get the latest version of the OpenJDK package when we install Java on our system.
-Now we use the following command to install Java. For the complete [steps to install Java click here](https://www.digitalocean.com/community/tutorials/install-latest-java-ubuntu).
+Now we use the following command to install Java. For the complete [steps to install Java click here](https://www.digitalocean.com/community/tutorials/install-latest-java-ubuntu).
 
 ```bash
 sudo apt install default-jdk
