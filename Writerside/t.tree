@@ -6,6 +6,23 @@
                  name="Tutoriales"
                  start-page="tutoriales.md">
 
+    <toc-element topic="Wordpress.md">
+        <toc-element topic="Install-Wordpress-on-RHEL.md">
+            <toc-element topic="5-Reinstall-Wordpress.md"/>
+            <toc-element topic="Install.md"/>
+            <toc-element topic="2-Install-PHP.md">
+                <toc-element topic="2-1-Install-PHP-Recommended-Extensions.md"/>
+            </toc-element>
+            <toc-element topic="3.md"/>
+            <toc-element topic="4-Install-Wordpress.md"/>
+        </toc-element>
+    </toc-element>
+    <toc-element topic="RedHat-Enterprise-Linux.md">
+        <toc-element topic="Install-EPEL-Repo.md"/>
+    </toc-element>
+    <toc-element topic="Debian.md">
+        <toc-element topic="Add-user-to-Sudoers.md"/>
+    </toc-element>
     <toc-element topic="NGINX.md">
         <toc-element topic="Install-NGINX.md"/>
     </toc-element>
@@ -15,5 +32,8 @@
     <toc-element topic="tutoriales.md"/>
     <toc-element topic="Apache.md">
         <toc-element topic="Install-Apache-Server.md"/>
+        <toc-element topic="PHP.md">
+            <toc-element topic="Install-PHP-8-on-RHEL.md"/>
+        </toc-element>
     </toc-element>
 </instance-profile>

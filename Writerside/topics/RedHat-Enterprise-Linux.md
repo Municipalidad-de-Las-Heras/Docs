@@ -1,0 +1,3 @@
+# RedHat Enterprise Linux
+
+Start typing here...
