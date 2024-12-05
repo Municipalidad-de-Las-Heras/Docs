@@ -1,6 +1,6 @@
-@import "Cuprite.css";
+@import "Catppuccin.css";
 
 :root {
     /* REPLACE 247, 92, 98 WITH YOUR BRANDING'S COLOR IN RGB */
-    --actual-primary-color: 247, 93, 98;
+    --actual-primary-color: 114, 135, 253;
 }

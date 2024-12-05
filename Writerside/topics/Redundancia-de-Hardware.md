@@ -1,4 +1,4 @@
-# Redundancia de Hardware (Hardware Redundancy)}
+# Redundancia de Hardware (Hardware Redundancy)
 
 **Hardware redundancy** (redundancia de hardware) es una técnica de diseño en la que se **duplican componentes críticos** de hardware para mejorar la **confiabilidad, disponibilidad y continuidad del servicio** en caso de fallos. Consiste en utilizar piezas adicionales de hardware (redundantes) que entran en acción automáticamente si los componentes principales fallan. Es común en entornos donde la **tolerancia a fallos** es esencial, como en centros de datos, servidores de misión crítica y sistemas industriales.
 
