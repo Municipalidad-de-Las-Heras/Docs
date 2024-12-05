@@ -608,7 +608,6 @@
 .prism--token.prism--url,
 .style .prism--token.prism--string {
     color: rgb(223, 142, 29);
-    background: hsla(0, 0%, 100%, 0.5);
 }
 .prism--token.prism--atrule,
 .prism--token.prism--attr-value,
@@ -616,10 +615,10 @@
     color: rgb(4, 165, 229);
 }
 .prism--token.prism--function {
-    color: #00627a;
+    color: rgb(136, 57, 239);
 }
 .prism--token.prism--class-name {
-    color: #000;
+    color: rgb(30, 102, 245);
 }
 .prism--token.prism--important,
 .prism--token.prism--variable,
