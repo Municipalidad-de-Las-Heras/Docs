@@ -330,10 +330,13 @@
 
 /*.toc-item--highlighted:first-child {
     border-top-right-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
 }
 
 .toc-item--highlighted:last-child {
+    border-top-right-radius: 0.5em;
     border-bottom-right-radius: 0.5em;
+
 }*/
 
 
