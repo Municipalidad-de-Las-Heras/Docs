@@ -301,49 +301,73 @@
 }
 
 /* selected/hovered in ToC */
-.toc-item--selected {
-    border-top-right-radius: 0.5em;
-    border-bottom-right-radius: 0.5em;
+
+/* This selector edit the selected topic colors and behavior for light theme */
+.toc-item--selected.toc-item--theme-light {
+    border-top-right-radius: 0.0em;
+    border-bottom-right-radius: 0.0em;
     font-weight:bold;
+    color: rgb(114, 135, 253);
+}
+
+.toc-item--selected:first-child.toc-item--theme-light {
+    border-top-right-radius: 0.5em; /* Redondeado del lado derecho */
+    border-bottom-right-radius: 0.0em; /* Redondeado del lado derecho */
+}
+
+/* This selector edit the selected topic colors and behavior for dark theme */
+.toc-item--selected.toc-item--theme-dark {
+    border-top-right-radius: 0.0em;
+    border-bottom-right-radius: 0.0em;
+    font-weight:bold;
+    color: rgb(186, 187, 241);
+}
+
+.toc-item--selected:last-child.toc-item--theme-light {
+    border-bottom-right-radius: 0.5em; /* Redondeado del lado derecho */
 }
 
 
-.toc-item--highlighted:first-child:last-child {
+/*.toc-item--highlighted:first-child {
     border-top-right-radius: 0.5em;
-    border-bottom-right-radius: 0.5em;
 }
+
+.toc-item--highlighted:last-child {
+    border-bottom-right-radius: 0.5em;
+}*/
+
 
 .toc-item--selected:hover, .toc-item--theme-light:hover, .toc-item--theme-dark:hover {
     border-top-right-radius: 0.5em;
     border-bottom-right-radius: 0.5em;
-    background-color: var(--primary-color-75);
+    background-color: rgb(148, 156, 187);
     }
 
 .toc--theme-dark {
-    background: var(--wh-color-bg-main);
-    background: rgb(239, 241, 245);
-    background: var(--wh-color-bg-main);
+    background: rgb(48, 52, 70);
 }
 
 .toc-item--highlighted.toc-item--theme-dark {
-    background: var(--wh-color-bg-main);
+    background: rgb(41, 44, 60);
     font-weight:bold;
+
 }
 
 .toc-item--highlighted.toc-item--theme-light {
-    background: rgb(114, 135, 253);
+    background: rgb(230, 233, 239);
     font-weight:bold;
+    rgb(108, 111, 133)
 }
 
+
 .toc--theme-light {
-    font-style:bold;
     background: rgb(239, 241, 245);
-    background: var(--wh-color-bg-main);
+    color: rgb(108, 111, 133);
 }
 
 /* tab for right side small ToC list */
 .toc-node--selected:after {
-    border-radius: 0.25em;
+
 }
 
 /* Background highlight in Topics pages for secondary sections */
