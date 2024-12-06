@@ -312,16 +312,38 @@
 /* Header light colors */
 .wh-header {
     color: var(--wh-color-primary);
+    font-weight: bold;
 }
 
 /* Header dark colors */
 :root.theme-dark .wh-header {
     color: var(--wh-color-primary);
+    font-weight: bold;
 }
 
 /* ToC */
 .app__sidebar {
     border-right: 1px transparent;
+}
+/*Base TOC config*/
+.toc--theme-light {
+    background: rgb(239, 241, 245);
+    color: rgb(108, 111, 133);
+}
+
+.toc--theme-dark {
+    background: rgb(48, 52, 70);
+}
+
+.toc-item--theme-light:hover{
+    color:rgb(234, 118, 203);
+}
+
+.toc-item--theme-dark:hover{
+    border-top-right-radius: 0em;
+    border-bottom-right-radius: 0em;
+    background-color: rgb(65, 69, 89);
+    color: rgb(244, 184, 228);
 }
 
 /* selected/hovered in ToC */
@@ -362,12 +384,7 @@
     color: rgb(234, 118, 203);
     }
 
-.toc-item--theme-dark:hover{
-    border-top-right-radius: 0em;
-    border-bottom-right-radius: 0em;
-    background-color: rgb(65, 69, 89);
-    color: rgb(244, 184, 228);
-}
+
 /*.toc-item--selected:hover{
     background-color: rgb(35, 38, 52);
     color: rgb(234, 118, 203);
@@ -377,9 +394,7 @@
     color:rgb(244, 184, 228);
 }*/
 
-.toc--theme-dark {
-    background: rgb(48, 52, 70);
-}
+
 
 .toc-item--highlighted.toc-item--theme-dark {
     background: rgb(41, 44, 60);
@@ -398,15 +413,6 @@
     font-weight:bold;
 }
 
-.toc-item--theme-light:hover{
-    color:rgb(234, 118, 203);
-}
-
-
-.toc--theme-light {
-    background: rgb(239, 241, 245);
-    color: rgb(108, 111, 133);
-}
 
 /* tab for right side small ToC list */
 .toc-node--selected:after {

@@ -6,23 +6,27 @@
                  name="Tutoriales"
                  start-page="tutoriales.md">
 
-    <toc-element topic="Apache.md">
-        <toc-element topic="Install-Apache-Server.md"/>
-    </toc-element>
-    <toc-element topic="Debian.md">
-        <toc-element topic="Add-user-to-Sudoers.md"/>
-    </toc-element>
-    <toc-element topic="NGINX.md">
-        <toc-element topic="Install-NGINX.md"/>
-    </toc-element>
-    <toc-element topic="PHP.md">
-        <toc-element topic="Install-PHP-8-on-RHEL.md"/>
-    </toc-element>
-    <toc-element topic="RedHat-Enterprise-Linux.md">
-        <toc-element topic="Install-EPEL-Repo.md"/>
-    </toc-element>
-    <toc-element topic="Tomcat.md">
-        <toc-element topic="Instalar-Tomcat.md"/>
+    <toc-element topic="Linux-Tutorials.md">
+        <toc-element topic="General.md">
+            <toc-element topic="Tomcat.md">
+                <toc-element topic="Instalar-Tomcat.md"/>
+            </toc-element>
+            <toc-element topic="PHP.md">
+                <toc-element topic="Install-PHP-8-on-RHEL.md"/>
+            </toc-element>
+            <toc-element topic="NGINX.md">
+                <toc-element topic="Install-NGINX.md"/>
+            </toc-element>
+            <toc-element topic="Apache.md">
+                <toc-element topic="Install-Apache-Server.md"/>
+            </toc-element>
+        </toc-element>
+        <toc-element topic="Debian.md">
+            <toc-element topic="Add-user-to-Sudoers.md"/>
+        </toc-element>
+        <toc-element topic="RedHat-Enterprise-Linux.md">
+            <toc-element topic="Install-EPEL-Repo.md"/>
+        </toc-element>
     </toc-element>
     <toc-element topic="Wordpress.md">
         <toc-element topic="Install-Wordpress-on-RHEL.md">
