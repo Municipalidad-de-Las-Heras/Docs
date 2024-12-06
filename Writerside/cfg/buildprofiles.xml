@@ -18,6 +18,9 @@
             <link-color>#ea76cb</link-color>
             <custom-css>custom.css</custom-css>
             <noindex-content>false</noindex-content>
+            <algolia-id>1T6DQQYYB9</algolia-id>
+            <algolia-index>Writerside</algolia-index>
+            <algolia-api-key>5dce5e97ea1021d31e3aabe87daf8bb2</algolia-api-key>
         </variables>
     </build-profile>
 

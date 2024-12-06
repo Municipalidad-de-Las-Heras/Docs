@@ -310,11 +310,6 @@
     color: rgb(114, 135, 253);
 }
 
-.toc-item--selected:first-child.toc-item--theme-light {
-    border-top-right-radius: 0.5em; /* Redondeado del lado derecho */
-    border-bottom-right-radius: 0.0em; /* Redondeado del lado derecho */
-}
-
 /* This selector edit the selected topic colors and behavior for dark theme */
 .toc-item--selected.toc-item--theme-dark {
     border-top-right-radius: 0.0em;
@@ -323,28 +318,29 @@
     color: rgb(186, 187, 241);
 }
 
-.toc-item--selected:last-child.toc-item--theme-light {
-    border-bottom-right-radius: 0.5em; /* Redondeado del lado derecho */
+.toc-item--highlighted:first-child:last-child {
+    border-top-right-radius: 0em;
+    border-bottom-right-radius: 0em;
 }
 
 
-/*.toc-item--highlighted:first-child {
-    border-top-right-radius: 0.5em;
-    border-bottom-right-radius: 0.5em;
-}
-
-.toc-item--highlighted:last-child {
-    border-top-right-radius: 0.5em;
-    border-bottom-right-radius: 0.5em;
-
-}*/
-
-
-.toc-item--selected:hover, .toc-item--theme-light:hover, .toc-item--theme-dark:hover {
-    border-top-right-radius: 0.5em;
-    border-bottom-right-radius: 0.5em;
-    background-color: rgb(148, 156, 187);
+.toc-item--selected:hover, .toc-item--theme-light:hover {
+    border-top-right-radius: 0em;
+    border-bottom-right-radius: 0em;
+    background-color: rgb(220, 224, 232);
+    color: rgb(234, 118, 203);
     }
+
+.toc-item--theme-dark:hover{
+    border-top-right-radius: 0em;
+    border-bottom-right-radius: 0em;
+    background-color: rgb(35, 38, 52);
+    color: rgb(244, 184, 228);
+}
+
+.toc-item--highlighted:hover {
+    color:rgb(234, 118, 203);
+}
 
 .toc--theme-dark {
     background: rgb(48, 52, 70);
@@ -359,7 +355,6 @@
 .toc-item--highlighted.toc-item--theme-light {
     background: rgb(230, 233, 239);
     font-weight:bold;
-    rgb(108, 111, 133)
 }
 
 
@@ -416,8 +411,8 @@
 
 /* footer links bullshit down to the last rs-text-3 thingy */
 .footer {
-    --app-link-color-dark: var(--wh-color-primary);
-    --app-link-border-color-dark: var(--wh-color-primary);
+    --app-link-color-dark: rgb(234, 118, 203);
+    --app-link-border-color-dark: rgb(234, 118, 203);
     color: var(--wh-color-primary);
 }
 /* stop being so fucking picky holy shit */
