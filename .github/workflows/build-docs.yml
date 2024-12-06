@@ -13,6 +13,10 @@ permissions:
 env:
   INSTANCE: 'Writerside/t'
   DOCKER_VERSION: '243.21565'
+  ALGOLIA_APP_NAME: 'Writerside'
+  ALGOLIA_INDEX_NAME: 'Writerside'
+  CONFIG_JSON_PRODUCT: 't'
+  CONFIG_JSON_VERSION: '1.0'
 
 jobs:
   build:
@@ -33,10 +37,7 @@ jobs:
           INSTANCE_ID_UPPER=$(echo "$INSTANCE" | tr '[:lower:]' '[:upper:]')
           ARTIFACT="webHelp${INSTANCE_ID_UPPER}2-all.zip"
           ALGOLIA_ARTIFACT="algolia-indexes-${INSTANCE_ID_UPPER}.zip"
-          ALGOLIA_APP_NAME: 'Writerside'
-          ALGOLIA_INDEX_NAME: 'Writerside'
-          CONFIG_JSON_PRODUCT: 't'
-          CONFIG_JSON_VERSION: '1.0'
+          
 
           # Print the values
           echo "INSTANCE_ID_UPPER: $INSTANCE_ID_UPPER"
