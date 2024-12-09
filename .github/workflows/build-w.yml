@@ -1,4 +1,4 @@
-name: Build documentation
+name: Build Tutorials
 
 on:
   push:
@@ -11,7 +11,7 @@ permissions:
   pages: write
 
 env:
-  INSTANCE: 'Writerside/t'
+  INSTANCE: 'Writerside/w'
   DOCKER_VERSION: '243.21565'
 
 jobs:
