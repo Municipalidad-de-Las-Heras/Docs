@@ -10,13 +10,13 @@ Imagick is a simple PHP extension for creating and modifying images using the Im
 First, install following prerequisite php-pear, php-devel and gcc packages to compile the Imagick PHP extension.
 
 ```bash
-dnf install php-pear php-devel gcc 
+sudo dnf install php-pear php-devel gcc 
 ```
 
 Once you’ve installed php-pear, php-devel, and gcc packages, you may now install ImageMagick software for PHP and Perl support using dnf command.
 
 ```bash
-dnf install ImageMagick ImageMagick-devel ImageMagick-perl
+sudo dnf install ImageMagick ImageMagick-devel ImageMagick-perl
 ```
 
 IMPORTANT: ImageMagick is not available in CentOS/RHEL 8, and it has been replaced with GraphicsMagick instead, which is a fork of ImageMagick.
@@ -24,7 +24,7 @@ IMPORTANT: ImageMagick is not available in CentOS/RHEL 8, and it has been replac
 To install GraphicsMagick on CentOS/RHEL 8, run the following command:
 
 ```bash
-dnf install GraphicsMagick GraphicsMagick-devel GraphicsMagick-perl
+sudo dnf install GraphicsMagick GraphicsMagick-devel GraphicsMagick-perl
 ```
 
 Next, verify that ImageMagick has been installed on your system by checking its version.
@@ -43,8 +43,8 @@ gm version
 To install ImageMagick from source, you need a proper development environment with a compiler and related development tools. If you don’t have the required packages on your system, install development tools as shown:
 
 ```bash
-yum groupinstall 'Development Tools'
-yum -y install bzip2-devel freetype-devel libjpeg-devel libpng-devel libtiff-devel giflib-devel zlib-devel ghostscript-devel djvulibre-devel libwmf-devel jasper-devel libtool-ltdl-devel libX11-devel libXext-devel libXt-devel lcms-devel libxml2-devel librsvg2-devel OpenEXR-devel php-devel
+sudo dnf groupinstall 'Development Tools'
+sudo dnf -y install bzip2-devel freetype-devel libjpeg-devel libpng-devel libtiff-devel giflib-devel zlib-devel ghostscript-devel djvulibre-devel libwmf-devel jasper-devel libtool-ltdl-devel libX11-devel libXext-devel libXt-devel lcms-devel libxml2-devel librsvg2-devel OpenEXR-devel php-devel
 ```
 
 Now, download the latest version of the ImageMagick source code using the following wget command and extract it.
@@ -76,7 +76,7 @@ Next, compile the Imagick for PHP extension. To do, simply run the following ‘
 Note: It will ask you to provide Imagemagick installation prefix, simply hit enter to auto-detect.
 
 ```bash
-pecl install imagick 
+sudo pecl install imagick 
 ```
 
 Now, add the `imagick.so` extension to `/etc/php.ini` file.
@@ -88,7 +88,7 @@ echo extension=imagick.so >> /etc/php.ini
 Next, restart Apache webserver.
 
 ```bash
-systemctl restart httpd
+sudo systemctl restart httpd
 ```
 
 Verify the Imagick PHP extension by running the following command. You will see the Imagick extension similar to below.
@@ -121,7 +121,7 @@ echo extension=gmagick.so >> /etc/php.ini
 Next, restart the Apache webserver.
 
 ```bash
-systemctl restart httpd
+sudo systemctl restart httpd
 ```
 
 Verify gmagick PHP extension by running the following command.
@@ -133,7 +133,7 @@ php -m | grep gmagick
 Alternatively, you can create a file called `phpinfo.php` under website root directory (ex: `/var/www/html/`).
 
 ```bash
-nano /var/www/html/phpinfo.php
+sudo nano /var/www/html/phpinfo.php
 ```
 
 Add the following code.
@@ -152,8 +152,87 @@ Open your favorite web browser and type `http://localhost/phpinfo.php` or
 
 ![phpinfo2.png](phpinfo2.png)
 
+## Install PHP Zip Extension
 
+### Install from package manager
 
+#### Check PHP Version
+To start, you need to know your PHP version. Open a terminal and run:
+
+```bash
+php -v
+```
+
+This shows your current PHP version. Your PHP version determines which package to install.
+
+#### Install Extension
+Use DNF to install the PHP Zip extension:
+
+Open a terminal and run:
+
+```bash
+sudo dnf install php-zip
+```
+
+Enter your password if asked.
+
+#### Check the Installation
+
+After installation, check if the Zip extension is active:
+
+Run in the terminal:
+
+```bash
+php -m | grep zip
+```
+
+If you see `zip` in the output, the extension is active.
+You can also create a PHP file with this content:
+
+```php
+<?php
+if (extension_loaded('zip')) {
+    echo "ZIP extension is installed.";
+} else {
+    echo "ZIP extension is not installed.";
+}
+?>
+```
+
+Save this as `check_zip.php` and run it in your browser or command line to confirm the installation.
+
+### Install using PECL (PHP Extension Community Library)
+
+PECL offers another way to install PHP extensions. To use PECL for installing the ZIP extension:
+
+#### Install PECL
+
+```bash
+sudo dnf install php-pear
+```
+
+#### Install the ZIP extension through PECL
+
+```bash
+sudo pecl install zip
+```
+
+#### Add the extension to your PHP configuration
+
+```bash
+echo "extension=zip.so" | sudo tee -a /etc/php.ini
+```
+
+Restart your web server to apply the changes.
+
+## Install Intl PHP Extension
+
+As you have php-commom from remi repositories, you need to get php-intl from remi also.
+
+```bash
+sudo dnf --enablerepo=remi install php-intl
+sudo yum --enablerepo=remi install php-intl
+```
 
 
 

@@ -1,3 +1,3 @@
-# Debian Based Distro
+# Debian Based Distros
 
 Start typing here...

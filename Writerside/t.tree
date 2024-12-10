@@ -22,10 +22,20 @@
             </toc-element>
         </toc-element>
         <toc-element topic="Debian.md">
-            <toc-element topic="Add-user-to-Sudoers.md"/>
+            <toc-element topic="Proxmox-VE.md"/>
+            <toc-element topic="Debian-OS.md">
+                <toc-element topic="Add-user-to-Sudoers.md"/>
+            </toc-element>
         </toc-element>
-        <toc-element topic="RedHat-Enterprise-Linux.md">
-            <toc-element topic="Install-EPEL-Repo.md"/>
+        <toc-element topic="Fedora-Based-Distros.md">
+            <toc-element topic="General-Fedora.md">
+                <toc-element topic="Autostart-VM-in-Cockpit.md"/>
+            </toc-element>
+            <toc-element topic="CentOS.md">
+            </toc-element>
+            <toc-element topic="RedHat-Enterprise-Linux.md">
+                <toc-element topic="Install-EPEL-Repo.md"/>
+            </toc-element>
         </toc-element>
     </toc-element>
     <toc-element topic="Wordpress.md">
@@ -37,6 +47,7 @@
             <toc-element topic="3.md"/>
             <toc-element topic="4-Install-Wordpress.md"/>
             <toc-element topic="5-Reinstall-Wordpress.md"/>
+            <toc-element topic="6-Install-wp-cli.md"/>
         </toc-element>
     </toc-element>
     <toc-element topic="tutoriales.md"/>
