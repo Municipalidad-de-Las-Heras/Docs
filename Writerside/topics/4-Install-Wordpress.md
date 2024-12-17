@@ -1,4 +1,4 @@
-# 4. Install Wordpress
+# 4. Install WordPress
 
 ## Step 1: Creating a WordPress Database
 
@@ -68,7 +68,7 @@ Next, copy the WordPress directory to the document root:
 sudo cp -R wordpress /var/www/html/
 ```
 
-Be sure the assign the necessary directory ownership and permissions as follows:
+Be sure they assign the necessary directory ownership and permissions as follows:
 
 ```bash
 sudo chown -R apache:apache /var/www/html/wordpress
@@ -131,7 +131,7 @@ sudo systemctl enable httpd
 sudo systemctl enable mariadb
 ```
 
-By default, SELinux denies communications to other pages on the network. To solve this you have to change some SELinux policies for the Apache Server.
+By default, SELinux denies communications to other pages on the network. To solve this, you have to change some SELinux policies for the Apache Server.
 
 ```bash
 sudo setsebool -P httpd_can_network_connect 1
@@ -139,7 +139,7 @@ sudo setsebool -P httpd_can_network_connect 1
 
 Now SELinux will permit WordPress to make outgoing network connections to check for updates and install plugins.
 
-To ensure that Wordpress does not block the network connection we will add the following line to the `wp-config.php` file:
+To ensure that WordPress does not block the network connection, we will add the following line to the `wp-config.php` file:
 
 ```bash
 sudo nano /var/www/html/wordpress/wp-config.php
@@ -182,4 +182,25 @@ This ushers you to the WordPress dashboard as shown. From here, you can customiz
 
 ![wordpress 9.png](wordpress 9.png)
 
-And that’s it! You have successfully installed WordPress on RHEL 9.
+And that is it! You have successfully installed WordPress on RHEL 9.
+
+## Appendix 1: File Permissions
+
+If you get any 403 Forbidden error, or any other permissions error, or if you have changed the location of the WordPress root folder, run these commands in the console:
+
+```bash
+sudo chgrp -R GROUP ./
+sudo chown -R USER:GROUP ./
+find ./ -type d -exec chmod 755 -R {} \;
+find ./ -type f -exec chmod 644 {} \;
+```
+
+And this:
+
+```bash
+chmod 644 /var/www/html
+chmod 755 /var/www/html
+```
+
+And the perrmission problem was resolved!
+

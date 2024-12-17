@@ -8,7 +8,7 @@ Note that all the commands in this guide will be run as root, in case you are no
 
 ## Step 1: Installing FTP Server
 
-Installing vsftpd server is straight forward, just run the following command in the terminal.
+Installing vsftpd server is straight forward, run the following command in the terminal.
 
 ```bash
 sudo yum install vsftpd
@@ -97,6 +97,11 @@ Now we will use semanage command to set SELinux rule to allow FTP to read/write 
 ```bash
 sudo semanage boolean -m ftpd_full_access --on
 ```
+At this point, we have to restart vsftpd to effect all the changes we made so far above:
+
+```bash
+sudo systemctl restart vsftpd
+```
 
 ### Fix semanage not found
 
@@ -158,12 +163,6 @@ sudo dnf whatprovides */semanage
 This will display the same result as above commands.
 
 Usually the executable files are located in any one of these locations - `/usr/sbin` and `/usr/bin` and `/usr/local/bin`. Hence, we can search directly in these locations.
-
-At this point, we have to restart vsftpd to effect all the changes we made so far above:
-
-```bash
-sudo systemctl restart vsftpd
-```
 
 ## Step 4: Testing FTP Server
 
