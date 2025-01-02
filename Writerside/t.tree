@@ -4,7 +4,7 @@
 
 <instance-profile id="t"
                  name="Tutoriales"
-                 start-page="tutoriales.md">
+                 start-page="General.md">
 
     <toc-element topic="Linux-Tutorials.md">
         <toc-element topic="General.md">
@@ -24,6 +24,7 @@
         </toc-element>
         <toc-element topic="Debian.md">
             <toc-element topic="Proxmox-VE.md">
+                <toc-element topic="How-to-create-a-VM-with-Cloud-Init-setting-in-Proxmox.md"/>
                 <toc-element topic="Import-QCOW2-Image-Into-Proxmox.md"/>
             </toc-element>
             <toc-element topic="Debian-OS.md">

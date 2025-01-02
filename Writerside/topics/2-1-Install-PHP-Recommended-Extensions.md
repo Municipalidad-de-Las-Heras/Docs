@@ -1,5 +1,24 @@
 # 2.1 Install PHP Recommended Extensions
 
+## Install REMI Repository
+
+Command to enabled the CRB repository:
+```bash
+subscription-manager repos --enable codeready-builder-for-rhel-9-x86_64-rpms
+```
+
+Command to install the EPEL repository configuration package:
+
+```bash
+dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm
+```
+
+Command to install the Remi repository configuration package:
+
+```bash
+dnf install https://rpms.remirepo.net/enterprise/remi-release-9.rpm
+```
+
 ## Install ImageMagick (Image Manipulation) Tool
 
 To use the ImageMagick tool with PHP or Perl programming language, you will need to install ImageMagick with the Imagick PHP extension for PHP and ImageMagick-Perl extension for Perl.
@@ -19,24 +38,10 @@ Once you’ve installed php-pear, php-devel, and gcc packages, you may now insta
 sudo dnf install ImageMagick ImageMagick-devel ImageMagick-perl
 ```
 
-IMPORTANT: ImageMagick is not available in CentOS/RHEL 8, and it has been replaced with GraphicsMagick instead, which is a fork of ImageMagick.
-
-To install GraphicsMagick on CentOS/RHEL 8, run the following command:
-
-```bash
-sudo dnf install GraphicsMagick GraphicsMagick-devel GraphicsMagick-perl
-```
-
 Next, verify that ImageMagick has been installed on your system by checking its version.
 
 ```bash
 convert --version
-```
-
-CentOS/RHEL 8 users, can run the following command to verify the version of GraphicsMagick installed on the system.
-
-```bash
-gm version
 ```
 
 ### Installing ImageMagick 7 from Source Code
@@ -71,12 +76,19 @@ magick -version
 
 ### Install Imagick PHP Extension
 
+#### Install from PECL
 Next, compile the Imagick for PHP extension. To do, simply run the following ‘pecl‘ command. It will install ImageMagick and imagick PHP extension module `imagick.so` under `/usr/lib/php/modules` directory. If you are using a 64-bit system, the module directory path would be `/usr/lib64/php/modules`.
 
 Note: It will ask you to provide Imagemagick installation prefix, simply hit enter to auto-detect.
 
 ```bash
 sudo pecl install imagick 
+```
+
+If for some reason the installation from pecl fails, we can install the extension from the REMI repository:
+
+```bash
+sudo dnf install php84-php-pecl-imagick-im7 
 ```
 
 Now, add the `imagick.so` extension to `/etc/php.ini` file.
@@ -97,84 +109,23 @@ Verify the Imagick PHP extension by running the following command. You will see 
 php -m | grep imagick
 ```
 
-### Install GMagick PHP Extension
-
-Run the following commands to compile and install GMagick PHP Extension.
-
-```bash
-cd /usr/local/src
-wget https://pecl.php.net/get/gmagick
-tar xfvz gmagick
-cd gmagick-*
-phpize
-./configure
-make
-make install
-```
-
-Now, add the `gmagick.so` extension to `/etc/php.ini` file.
-
-```bash
-echo extension=gmagick.so >> /etc/php.ini
-```
-
-Next, restart the Apache webserver.
-
-```bash
-sudo systemctl restart httpd
-```
-
-Verify gmagick PHP extension by running the following command.
-
-```bash
-php -m | grep gmagick
-```
-
-Alternatively, you can create a file called `phpinfo.php` under website root directory (ex: `/var/www/html/`).
-
-```bash
-sudo nano /var/www/html/phpinfo.php
-```
-
-Add the following code.
-
-```php
-<?php
-
-     phpinfo ();
-?>
-```
-
-Open your favorite web browser and type `http://localhost/phpinfo.php` or
-`http://ip-addresss/phpinfo.php` and verify the extension.
-
 ![phpinfo.png](phpinfo.png)
-
-![phpinfo2.png](phpinfo2.png)
 
 ## Install PHP Zip Extension
 
 ### Install from package manager
 
-#### Check PHP Version
-To start, you need to know your PHP version. Open a terminal and run:
-
-```bash
-php -v
-```
-
-This shows your current PHP version. Your PHP version determines which package to install.
-
-#### Install Extension
 Use DNF to install the PHP Zip extension:
 
-Open a terminal and run:
-
 ```bash
-sudo dnf install php-zip
+sudo dnf install php84-php-pecl-zip libzip-devel
 ```
 
-Enter your password if asked.
+#### Add the extension to your PHP configuration file
+
+```bash
+echo "extension=zip.so" | sudo tee -a /etc/php.ini
+```
 
 #### Check the Installation
 
@@ -208,7 +159,7 @@ PECL offers another way to install PHP extensions. To use PECL for installing th
 #### Install PECL
 
 ```bash
-sudo dnf install php-pear
+sudo dnf install php-pear libzip-devel
 ```
 
 #### Install the ZIP extension through PECL
@@ -230,14 +181,30 @@ Restart your web server to apply the changes.
 As you have php-commom from remi repositories, you need to get php-intl from remi also.
 
 ```bash
-sudo dnf --enablerepo=remi install php-intl
-sudo yum --enablerepo=remi install php-intl
+sudo dnf install php84-php-intl
 ```
 
+#### Add the extension to PHP configuration file
 
+```bash
+echo "extension=intl.so" | sudo tee -a /etc/php.ini
+```
 
+## Add PHP extensions to path
 
+If you installed the extensions from the REMI repository and the system still does not recognize them, you must create a symbolic link to the php path. This happens because the REMI packages are installed in a different location by default than the one where php is installed. You must do this with all the extensions, and it is done in the following way:
 
+```bash
+sudo ln -s /opt/remi/php84/root/usr/lib64/php/modules/xxx.so /usr/lib64/php/modules/xxx.so
+```
+
+For example:
+
+```bash
+sudo ln -s /opt/remi/php84/root/usr/lib64/php/modules/intl.so /usr/lib64/php/modules/intl.so
+```
+
+This will create a symbolic link, so every time the package is updated, php will recognize the updated library without needing to do anything
 
 
 
