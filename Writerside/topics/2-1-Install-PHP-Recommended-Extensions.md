@@ -85,6 +85,7 @@ Note: It will ask you to provide Imagemagick installation prefix, simply hit ent
 sudo pecl install imagick 
 ```
 
+#### Install from REMI Repository
 If for some reason the installation from pecl fails, we can install the extension from the REMI repository:
 
 ```bash

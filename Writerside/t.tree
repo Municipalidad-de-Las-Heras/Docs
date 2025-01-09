@@ -19,11 +19,12 @@
             </toc-element>
             <toc-element topic="Apache.md">
                 <toc-element topic="Install-Apache-Server.md"/>
+                <toc-element topic="How-to-Enable-Apache-Rewrite-mod-rewrite-Module.md"/>
             </toc-element>
-            <toc-element topic="How-to-Enable-Apache-Rewrite-mod-rewrite-Module.md"/>
         </toc-element>
         <toc-element topic="Debian.md">
             <toc-element topic="Proxmox-VE.md">
+                <toc-element topic="How-to-unlock-a-Proxmox-VM.md"/>
                 <toc-element topic="How-to-create-a-VM-with-Cloud-Init-setting-in-Proxmox.md"/>
                 <toc-element topic="Import-QCOW2-Image-Into-Proxmox.md"/>
             </toc-element>
@@ -54,8 +55,9 @@
             </toc-element>
             <toc-element topic="3.md"/>
             <toc-element topic="4-Install-Wordpress.md"/>
+            <toc-element topic="6-Install-wp-cli.md">
+            </toc-element>
             <toc-element topic="5-Reinstall-Wordpress.md"/>
-            <toc-element topic="6-Install-wp-cli.md"/>
         </toc-element>
     </toc-element>
     <toc-element topic="tutoriales.md"/>

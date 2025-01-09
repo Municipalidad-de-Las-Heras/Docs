@@ -41,9 +41,9 @@ total 3.2G
 ![imageoutput.png](imageoutput.png "Copy QCOW2 Image To Proxmox Storage")
 
 ## Step 3: Create a VM Without OS
-Log in to the Proxmox Web UI dashboard by navigating to https://ip-address:8006 URL.
+Log in to the Proxmox Web UI dashboard by navigating to `https://ip-address:8006` URL.
 
-Right click on your Proxmox node and click "Create VM" option from the context menu.
+Right click on your Proxmox node and click `Create VM` option from the context menu.
 
 ![image.png](image.png)
 
@@ -87,8 +87,7 @@ Before importing the QCOW2 into your Proxmox server, make sure you've the follow
 1. Virtual machine's ID,
 2. Proxmox storage name,
 3. Location of the Proxmox QCOW2 image file.
-4. 
-If you don't have them or don't know where to find them, just open your Proxmox web UI dashboard. On the left pane, you will see the virtual machine's IDs and the storage name.
+4. If you don't have them or don't know where to find them, just open your Proxmox web UI dashboard. On the left pane, you will see the virtual machine's IDs and the storage name.
 
 ![image_10.png](image_10.png)
 

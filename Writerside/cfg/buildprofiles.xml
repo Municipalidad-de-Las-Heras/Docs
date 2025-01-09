@@ -18,7 +18,7 @@
             <link-color>#ea76cb</link-color>
             <custom-css>custom.css</custom-css>
             <noindex-content>false</noindex-content>
-            </variables>
+        </variables>
     </build-profile>
 
 </buildprofiles>
