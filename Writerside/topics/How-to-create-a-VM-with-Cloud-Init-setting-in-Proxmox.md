@@ -1,4 +1,4 @@
-# How to create a VM with Cloud-Init setting in Proxmox
+# Create a VM with Cloud-Init setting in Proxmox
 
 Let’s see how to create a VM, starting from a template, and using Cloud-Init to configure basic settings at the first run.
 

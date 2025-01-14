@@ -1,4 +1,4 @@
-# 5. Reinstall Wordpress
+# 6. Reinstall Wordpress
 
 ## Step 1: Make a Backup (Optional but Recommended)
 Before making any changes, it is recommended to make a backup of your current installation, just in case you need to recover something later.

@@ -265,3 +265,138 @@ time.cloudflare.com        22  11   25m     +2.171      5.208  -3405us  3028us
 ntp0.icolo.io              20   9   22m     -0.076      5.819  -8208ns  2222us
 dbn-ntp.mweb.co.za         21  13   23m     +2.843      6.363   +803us  2810us
 ```
+
+## Step 4: Configure Chrony NTP Clients
+
+### Configure Client to Synchronize Time with Chrony NTP
+
+Next, you need to allow clients on your network access to the server to synchronize time and date settings. Once again, head back to the configuration file.
+
+On Debian:
+```bash
+sudo nano /etc/chrony/chrony.conf
+```
+
+On RHEL:
+```bash
+
+sudo nano /etc/chrony.conf
+```
+
+Append this line to specify the network subnet of which the NTP server is a part.
+
+```bash
+allow 192.168.54.0/24
+```
+
+![image_49.png](image_49.png)
+
+Save the changes made and exit the configuration file.
+
+Next, verify that your NTP server is using online NTP servers for time synchronization.
+
+```bash
+chronyc sources
+```
+
+![image_50.png](image_50.png)
+
+For detailed output use the -v flag as shown.
+
+```bash
+chronyc sources -v
+```
+
+![image_51.png](image_51.png)
+
+If you have Firewalld running, consider allowing NTP traffic by running the following commands.
+
+```bash
+sudo firewall-cmd  --add-service=ntp --permanent
+sudo firewall-cmd --reload
+```
+
+### Configure Chrony NTP Client to Sync Time with NTP Server
+
+The next thing to do is to configure a client system to receive time and date settings from the NTP server. Ensure that the client is in the same timezone as the NTP server.
+
+You can configure the timezone on the command line as follows.
+
+```bash
+sudo timedatectl set-timezone America/Argentina/Mendoza
+```
+
+On the client, ensure that Chrony is installed as shown.
+
+On Debian:
+
+```bash
+sudo apt install chrony
+```
+
+On RHEL:
+
+```bash
+sudo dnf install chrony
+```
+
+Once installed, start and enable the Chrony daemon.
+
+```bash
+sudo systemctl start chronyd
+sudo systemctl enable chronyd
+```
+
+Next, we need to configure the client to sync date and time settings from the NTP server. As such, modify the configuration file:
+
+On Debian:
+```bash
+sudo nano /etc/chrony/chrony.conf
+```
+
+On RHEL:
+```bash
+
+sudo nano /etc/chrony.conf
+```
+
+Comment out the pool address and add the following line where the IP address corresponds to that of the NTP server.
+
+```bash
+server 192.168.54.81
+```
+
+![image_52.png](image_52.png)
+
+Save the changes made and exit the configuration file.
+
+Then start the NTP synchronization.
+
+```bash
+sudo timedatectl set-ntp true
+```
+
+To apply the changes made, restart the Chronyd service.
+
+```bash
+sudo systemctl restart chronyd
+```
+
+Then verify the time synchronization as follows.
+
+```bash
+sudo chronyc sources
+```
+
+From the output below, It’s noticeable that the client is getting time and date settings from the NTP server.
+
+![image_53.png](image_53.png)
+
+Back at the server, you can verify the NTP clients. You should see the IP address of the NTP client listed as shown below.
+
+```bash
+sudo chronyc clients
+```
+
+![image_54.png](image_54.png)
+

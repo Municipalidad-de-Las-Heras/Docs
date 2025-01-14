@@ -1,4 +1,4 @@
-# 6. Install WP-CLI
+# 5. Install WP-CLI
 
 ## Installation
 Downloading the Phar file is our recommended installation method for most users. Should you need, see also our documentation on alternative [installation methods](https://make.wordpress.org/cli/handbook/installing/) ([Composer](https://make.wordpress.org/cli/handbook/installing/#installing-via-composer), [Homebrew](https://make.wordpress.org/cli/handbook/installing/#installing-via-homebrew), [Docker](https://make.wordpress.org/cli/handbook/installing/#installing-via-docker)).

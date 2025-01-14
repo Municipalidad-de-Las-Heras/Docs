@@ -1,4 +1,4 @@
-# How to unlock a Proxmox VM
+# Unlock a Proxmox VM
 
 From time to time, you'll come across the need to kill a lock on your Proxmox server. Fear not, in today's guide we'll discuss the various lock errors you may face and how to unlock a Proxmox VM.
 
