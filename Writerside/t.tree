@@ -8,6 +8,7 @@
 
     <toc-element topic="Linux-Tutorials.md">
         <toc-element topic="General.md">
+            <toc-element topic="Install-Wekan-Snap.md"/>
             <toc-element topic="Change-DNS-Servers.md"/>
             <toc-element topic="View-Free-Disk-Space-and-Disk-Usage-From-the-Linux-Terminal.md"/>
             <toc-element topic="Tomcat.md">
@@ -35,8 +36,10 @@
                 <toc-element topic="Setup-QDevice.md"/>
                 <toc-element topic="How-to-unlock-a-Proxmox-VM.md"/>
                 <toc-element topic="How-to-create-a-VM-with-Cloud-Init-setting-in-Proxmox.md"/>
+                <toc-element topic="How-to-Fix-A-Proxmox-VM-In-An-Error-State.md"/>
             </toc-element>
             <toc-element topic="Debian-OS.md">
+                <toc-element topic="Install-Snap-Store.md"/>
                 <toc-element topic="Permit-Root-Login-on-SSH.md"/>
                 <toc-element topic="Configure-Chrony-NTP-Server-on-Debian-12-11-10.md"/>
                 <toc-element topic="Add-user-to-Sudoers.md"/>
