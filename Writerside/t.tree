@@ -6,6 +6,11 @@
                  name="Tutoriales"
                  start-page="General.md">
 
+    <toc-element topic="Windows.md">
+        <toc-element topic="General-Windows1.md">
+            <toc-element topic="Reser-User-Password.md"/>
+        </toc-element>
+    </toc-element>
     <toc-element topic="Linux-Tutorials.md">
         <toc-element topic="General.md">
             <toc-element topic="Install-Wekan-Snap.md"/>
