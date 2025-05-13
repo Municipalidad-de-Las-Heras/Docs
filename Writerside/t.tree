@@ -38,10 +38,12 @@
                 <toc-element topic="Backup-and-Restore-VMs-in-Proxmox.md"/>
                 <toc-element topic="Empty-MD-Topic.md"/>
                 <toc-element topic="Import-QCOW2-Image-Into-Proxmox.md"/>
-                <toc-element topic="Setup-QDevice.md"/>
                 <toc-element topic="How-to-unlock-a-Proxmox-VM.md"/>
                 <toc-element topic="How-to-create-a-VM-with-Cloud-Init-setting-in-Proxmox.md"/>
                 <toc-element topic="How-to-Fix-A-Proxmox-VM-In-An-Error-State.md"/>
+                <toc-element topic="Add-QNAP-network-share-as-storage-to-Proxmox.md">
+                </toc-element>
+                <toc-element topic="Setup-QDevice.md"/>
             </toc-element>
             <toc-element topic="Debian-OS.md">
                 <toc-element topic="Install-Snap-Store.md"/>
